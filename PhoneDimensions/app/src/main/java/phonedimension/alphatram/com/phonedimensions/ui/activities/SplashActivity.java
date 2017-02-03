@@ -10,7 +10,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         // Once ready, navigate to the Main Activity
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
