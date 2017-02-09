@@ -66,13 +66,13 @@ public class MainActivity extends BaseActivity {
                 Fragment fragment = null;
                 switch (position) {
                     // TODO: - Add the correct instances of the fragments
-                    case 1:
+                    case 0:
                         fragment = new PhoneDimensionsListFragment();
                         break;
-                    case 2:
+                    case 1:
                         fragment = new AddPhoneDimensionFragment();
                         break;
-                    case 3:
+                    case 2:
                         fragment = new AboutUsFragment();
                         break;
                     default:
