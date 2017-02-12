@@ -1,5 +1,6 @@
 package phonedimension.alphatram.com.phonedimensions.ui.activities;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TableLayout;
 
 import butterknife.BindView;
@@ -107,6 +109,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 mViewPager.setCurrentItem(tab.getPosition());
+                hideKeyboard();
             }
 
             @Override
@@ -121,4 +124,12 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Method to dismiss the soft keyboard.
+     */
+    private void hideKeyboard() {
+        // Hide the keyboard once this is navigated away from.
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    }
 }

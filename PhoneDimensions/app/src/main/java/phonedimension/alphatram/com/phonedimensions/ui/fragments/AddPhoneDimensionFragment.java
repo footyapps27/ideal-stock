@@ -1,11 +1,13 @@
 package phonedimension.alphatram.com.phonedimensions.ui.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import phonedimension.alphatram.com.phonedimensions.R;
 
@@ -24,4 +26,9 @@ public class AddPhoneDimensionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_add_phone_dimension, container, false);
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+
+    }
 }
